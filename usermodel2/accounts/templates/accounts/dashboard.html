@@ -1,0 +1,7 @@
+<div class="dashboard">
+  <a href="{% url 'index' %}"><div><i class="fa fa-home" aria-hidden="true"></i><p>Home</p></div></a>
+  <a href="{% url 'accounts:patient_list' %}"><div><i class="fa fa-bed" aria-hidden="true"></i> <p>Patients</p></div></a>
+  <a href="{% url 'accounts:patient_create' %}"><div><i class="fa fa-plus-square" aria-hidden="true"></i><p>Add Patients</p></div></a>
+  <a href="{% url 'accounts:view_profile' pk=user.pk %}"><div><i class="fa fa-user" aria-hidden="true"></i><p>My Profile</p></div></a> 
+  <a href="{% url 'accounts:change_password' %}"><div><i class="fa fa-key" aria-hidden="true"></i><p>Change Password</p></div></a>
+</div>

@@ -1,0 +1,87 @@
+.centered {
+ position: absolute;
+ top: 60%;
+ left: 15%;
+ transform: translate(-30%, -30%);
+ font-family: 'Lobster', cursive;
+ font-size: 400%;
+}
+
+#about{
+ text-align: center;
+ padding-top: 40px;
+}
+
+.doctor_pics{
+  margin:20px;
+  height: 90%;
+  width:46%;
+}
+
+#texts{
+  display: inline-block;
+  width: 46%;
+ text-align: center;
+ padding-top:7%;
+ font-family: 'Lobster', cursive;
+ font-size: 30px;
+}
+
+#doctor_left{
+ float: left;
+ overflow: hidden;
+}
+
+#doctor_right{
+ float: right;
+ overflow: hidden;
+}
+
+.packing{
+  height: 450px;
+  position: relative;
+  margin: 20px;
+}
+
+@media only screen and (max-width:1500px){
+  #texts{
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  #texts{
+    font-size: 20px;
+  }
+
+
+  #doctor_left{
+    float:none;
+    width: 90%;
+  }
+
+  #doctor_right{
+    float: none;
+    width: 90%;
+  }
+
+  .doctor_pics{
+    margin: 5px;
+    height: 48%;
+  }
+
+  #texts{
+    padding: 5px;
+    width: 90%;
+    height: 48%;
+  }
+
+  .packing{
+    height:700px;
+  }
+
+  .centered{
+    font-size: 200%;
+    padding-bottom:50%;
+  }
+}

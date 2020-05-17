@@ -1,0 +1,72 @@
+{% extends "accounts/base.html" %}
+{% load bootstrap4 %}
+
+{% block body_block %}
+
+<div class="container">
+  <div class="jumbotron">
+    <form method='GET' action='{% url 'accounts:patient_list' %}'>
+      <input type='search' name='q' placeholder='Search'>
+    </form>
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Field</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <th scope="row"><i class="fa fa-arrow-right" aria-hidden="true"></i></th>
+            <td>Name</td>
+            <td>{{ object.name }}</td>
+          </tr>
+          <tr>
+            <th scope="row"><i class="fa fa-arrow-right" aria-hidden="true"></i></th>
+            <td>Phone Number</td>
+            <td>{{ object.contact_no }}</td>
+          </tr>
+          <tr>
+            <th scope="row"><i class="fa fa-arrow-right" aria-hidden="true"></i></th>
+            <td>Address</td>
+            <td>{{ object.address }}</td>
+          </tr>
+          <tr>
+            <th scope="row"><i class="fa fa-arrow-right" aria-hidden="true"></i></th>
+            <td>Date Of Birth</td>
+            <td>{{ object.dob }}</td>
+          </tr>
+          <tr>
+            <th scope="row"><i class="fa fa-arrow-right" aria-hidden="true"></i></th>
+            <td>Blood Group</td>
+            <td>{{ object.blood_group }}</td>
+          </tr>
+          <tr>
+            <th scope="row"><i class="fa fa-arrow-right" aria-hidden="true"></i></th>
+            <td>Case</td>
+            <td>{{ object.case }}</td>
+          </tr>
+          <tr>
+            <th scope="row"><i class="fa fa-arrow-right" aria-hidden="true"></i></th>
+            <td>Report File</td>
+            {% if object.report %}
+              <td><img src="{{ object.report.url }}" width="240"></td>
+            {% else %}
+              <td>No Report Available</td>
+            {% endif %}
+          </tr>
+    </table>
+    <a class="btn btn-danger btn-lg" href="{% url 'accounts:patient_delete' id=object.id %}">
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    </a>
+
+    <a class="btn btn-primary btn-lg" href="{% url 'accounts:patient_update' id=object.id %}">
+      <i class="fa fa-wrench" aria-hidden="true"></i>
+    </a>
+
+  </div>
+</div>
+
+{% endblock %}

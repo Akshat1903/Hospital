@@ -1,0 +1,23 @@
+{% extends "accounts/base.html" %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+{{ form.media }}
+
+{% block body_block %}
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Add new Patient</h1>
+
+    <form method='POST' action='.' enctype="multipart/form-data">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      {% buttons %}
+    		<button type="submit" class="btn btn-primary btn-large">Add</button>
+    	{% endbuttons %}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

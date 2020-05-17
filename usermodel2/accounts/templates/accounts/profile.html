@@ -1,0 +1,38 @@
+{% extends "accounts/base.html" %}
+
+{% block body_block %}
+<div class="container">
+	<div class="jumbotron">
+		<div class="container">
+			<div class="profile">
+				<div class="row">
+					<div class="col-3">
+						{% if user.doctorprofile.image %}
+							<img id="doctorimg" src="{{ user.doctorprofile.image.url }}" width="240" class="img-thumbnail">
+						{% endif %}
+					</div>
+					<div class="col-9 description">
+						<h1><b>Profile</b></h1>
+						<br>
+						<p><b>Username:</b> {{ user }}</p>
+						<br>
+						<p><b>First Name:</b> {{ user.first_name }}</p>
+						<br>
+						<p><b>Last Name:</b> {{ user.last_name }}</p>
+						<br>
+						<p><b>Email:</b> {{ user.email }}</p>
+						<br>
+						<p><b>Speciality:</b> {{ user.doctorprofile.speciality }}</p>
+						<br>
+						<p><b>Phone:</b> {{ user.doctorprofile.phonenumber }}</p>
+						<br>
+						<p><a class="btn btn-primary" href="{% url 'accounts:edit' pk=user.pk %}">Edit</a></p>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

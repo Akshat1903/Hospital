@@ -1,0 +1,22 @@
+{% extends "accounts/base.html" %}
+{% load bootstrap4 %}
+{% block body_block %}
+  <div class="container">
+    <div class="jumbotron">
+        <h1>Edit Here</h1>
+        <h3>Just fill out the form.</h3>
+
+        <form enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+          {% bootstrap_form user_form %}
+          {% bootstrap_form profile_form %}
+          {% buttons %}
+        		<button type="submit" class="btn btn-primary btn-large">Edit</button>
+        	{% endbuttons %}
+        </form>
+
+    </div>
+
+  </div>
+
+{% endblock %}

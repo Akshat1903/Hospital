@@ -1,0 +1,16 @@
+#doctorimg{
+  border-radius: 50%;
+	width: 100%;
+	height: 40%;
+}
+
+.profile{
+      margin-top: 50px;
+      background-color: lightgrey;
+      padding: 20px;
+    }
+
+.description{
+      background-color: #314c54;
+      color: white;
+    }

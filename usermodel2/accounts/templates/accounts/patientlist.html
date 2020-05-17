@@ -1,0 +1,48 @@
+{% extends "accounts/base.html" %}
+
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron">
+    {% if messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <ul class="messages">
+          {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+      </ul>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %}
+
+    <form method='GET' action='{% url 'accounts:patient_list' %}'>
+      <input type='search' name='q' placeholder='Search'>
+    </form>
+
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Case</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for object in object_list %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ object.name }}</td>
+            <td>{{ object.contact_no }}</td>
+            <td>{{ object.case }}</td>
+            <td><a href="{% url 'accounts:patient_detail' id=object.id %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>View Details</a></td>
+          </tr>
+        {% endfor %}
+    </table>
+  </div>
+</div>
+
+{% endblock %}
