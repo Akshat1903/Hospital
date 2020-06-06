@@ -4,7 +4,7 @@ astroid==2.4.1
 autopep8==1.5.2
 beautifulsoup4==4.9.0
 cffi==1.14.0
-Django==3.0.6
+Django==3.0.7
 django-bootstrap-datepicker-plus==3.0.5
 django-bootstrap3==12.1.0
 django-bootstrap4==1.1.1
