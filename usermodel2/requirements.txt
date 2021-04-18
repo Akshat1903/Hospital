@@ -8,7 +8,7 @@ Django==3.0.14
 django-bootstrap-datepicker-plus==3.0.5
 django-bootstrap3==12.1.0
 django-bootstrap4==1.1.1
-django-debug-toolbar==2.2
+django-debug-toolbar==2.2.1
 Faker==4.0.3
 lazy-object-proxy==1.4.3
 misaka==2.1.1
